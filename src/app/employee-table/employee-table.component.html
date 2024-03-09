@@ -1,0 +1,27 @@
+<div class="mattable">
+    <h2 class="m-3">Employee List</h2>
+    <table mat-table [dataSource]="dataSource" class="table" matSort>
+
+        <!-- Employee Name Column -->
+        <ng-container matColumnDef="employeeName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </th>
+          <td mat-cell *matCellDef="let employee"[ngClass]="{'red-row': employee.TotalWorkTime < 100}"> {{ employee.EmployeeName || 'undefined' }} </td>
+        </ng-container>
+    
+        <!-- Total Time Worked Column -->
+        <ng-container matColumnDef="totalTimeWorked">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Time Worked (HOURS) </th>
+          <td mat-cell *matCellDef="let employee"[ngClass]="{'red-row': employee.TotalWorkTime < 100}"> {{ employee.TotalWorkTime | number: '1.2-2' }} </td>
+        </ng-container>
+    
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+          <td mat-cell *matCellDef="let employee"[ngClass]="{'red-row': employee.TotalWorkTime < 100}"> <a href="javascript:void(0)">Edit</a> </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>
+
