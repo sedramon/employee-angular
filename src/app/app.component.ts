@@ -7,7 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'employee-angular';
+  title = 'hope you are having a nice day';
 
   constructor(private modalService: NgbModal) {
   }

@@ -1,4 +1,4 @@
-<div class="mattable">
+<div class="mattable mb-5">
     <h2 class="m-3">Employee List</h2>
     <table mat-table [dataSource]="dataSource" class="table" matSort>
 
@@ -23,5 +23,10 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+      
 </div>
 
+<div class="d-flex flex-column align-items-center justify-content-center">
+    <h2>Pie Chart</h2>
+    <canvas #employeeChart width="500" height="500"></canvas>
+  </div>
